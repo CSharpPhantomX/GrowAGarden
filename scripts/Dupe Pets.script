@@ -1,0 +1,7 @@
+local pets = player:WaitForChild("Pets")
+
+for _, pet in pairs(pets:GetChildren()) do
+	local clone = pet:Clone()
+	clone.Parent = pets
+	print("🐾 Pet duplicated:", pet.Name)
+end

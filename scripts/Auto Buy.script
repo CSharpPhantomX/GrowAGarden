@@ -1,0 +1,11 @@
+local shop = workspace:WaitForChild("Shop")
+local itemsToBuy = {"SuperSeed", "OwlCompanion", "SpeedBoots"}
+
+for _, itemName in ipairs(itemsToBuy) do
+	local item = shop:FindFirstChild(itemName)
+	if item then
+		item.Purchase:FireServer()
+		print("🛒 Bought:", itemName)
+	end
+	wait(2)
+end

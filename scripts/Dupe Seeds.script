@@ -1,0 +1,11 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local seedFolder = ReplicatedStorage:WaitForChild("Seeds")
+local playerGarden = workspace:WaitForChild("Gardens"):FindFirstChild(game.Players.LocalPlayer.Name)
+
+for _, seed in pairs(seedFolder:GetChildren()) do
+	if seed:IsA("Model") then
+		local clone = seed:Clone()
+		clone.Parent = playerGarden
+		print("🌾 Duplicated seed:", clone.Name)
+	end
+end

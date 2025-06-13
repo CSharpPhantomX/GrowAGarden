@@ -1,0 +1,7 @@
+local points = player.leaderstats:FindFirstChild("LunarPoints")
+
+while true do
+	points.Value += 50
+	print("🌙 +50 Lunar Points! Total:", points.Value)
+	wait(2)
+end

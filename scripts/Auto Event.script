@@ -1,0 +1,7 @@
+local seasonalEvents = ReplicatedStorage:WaitForChild("SeasonalEvents")
+
+for _, event in pairs(seasonalEvents:GetChildren()) do
+	event.Complete:FireServer()
+	print("🎉 Event auto-completed:", event.Name)
+	wait(1)
+end

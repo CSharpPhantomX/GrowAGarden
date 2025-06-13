@@ -1,0 +1,8 @@
+local seedToSpawn = "CrystalBean"
+local spawnPoint = workspace:FindFirstChild("SeedSpawner")
+
+if spawnPoint then
+	local newSeed = ReplicatedStorage.Seeds[seedToSpawn]:Clone()
+	newSeed.Parent = spawnPoint
+	print("🌱 Spawned:", seedToSpawn)
+end

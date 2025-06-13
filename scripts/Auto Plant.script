@@ -1,0 +1,14 @@
+local inventory = player:WaitForChild("Backpack")
+local gardenPlot = workspace:WaitForChild("GardenPlots"):FindFirstChild(player.Name)
+
+for _, seed in pairs(inventory:GetChildren()) do
+	if seed:IsA("Tool") and seed.Name:match("Seed") then
+		local plot = gardenPlot:FindFirstChild("EmptySpot")
+		if plot then
+			local plant = ReplicatedStorage.Seeds[seed.Name]:Clone()
+			plant.Parent = plot
+			print("🪴 Planted:", seed.Name)
+		end
+	end
+	wait(1)
+end

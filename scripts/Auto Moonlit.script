@@ -1,0 +1,9 @@
+local MoonlitTasks = require(game:GetService("ReplicatedStorage"):WaitForChild("MoonlitTasks"))
+
+while true do
+	wait(10)
+	for _, task in pairs(MoonlitTasks:GetAvailable()) do
+		task:Complete()
+		print("🌕 Completed Moonlit task:", task.Name)
+	end
+end

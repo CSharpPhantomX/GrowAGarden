@@ -1,0 +1,15 @@
+local garden = workspace.GardenPlots[player.Name]
+
+while true do
+	for _, plant in pairs(garden:GetChildren()) do
+		if plant:FindFirstChild("IsFullyGrown") and plant.IsFullyGrown.Value then
+			print("🔁 Harvested:", plant.Name)
+			plant:Destroy()
+			wait(0.5)
+			local newSeed = ReplicatedStorage.Seeds[plant.Name]:Clone()
+			newSeed.Parent = garden
+			print("🌱 Replanted:", plant.Name)
+		end
+	end
+	wait(5)
+end

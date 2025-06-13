@@ -1,0 +1,9 @@
+local player = game.Players.LocalPlayer
+local stats = player:WaitForChild("leaderstats")
+local coins = stats:FindFirstChild("Coins")
+
+while true do
+	wait(1)
+	coins.Value += 500
+	print("💰 Earned 500 coins! Total:", coins.Value)
+end

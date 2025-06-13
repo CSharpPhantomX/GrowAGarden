@@ -1,0 +1,8 @@
+local harvestFolder = player:WaitForChild("Inventory"):FindFirstChild("Harvest")
+
+for _, item in pairs(harvestFolder:GetChildren()) do
+	if item:IsA("Tool") then
+		ReplicatedStorage.SellItem:FireServer(item.Name, item.Quantity.Value)
+		print("💸 Sold:", item.Name, "x" .. item.Quantity.Value)
+	end
+end

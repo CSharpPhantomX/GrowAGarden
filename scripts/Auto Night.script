@@ -1,0 +1,10 @@
+local Events = ReplicatedStorage:WaitForChild("NightEvents")
+
+game:GetService("Lighting").Changed:Connect(function()
+	if Lighting.ClockTime >= 18 or Lighting.ClockTime < 6 then
+		for _, event in pairs(Events:GetChildren()) do
+			event:FireServer()
+			print("🌌 Activated night event:", event.Name)
+		end
+	end
+end)

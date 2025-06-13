@@ -1,0 +1,5 @@
+local trowel = player.Backpack:FindFirstChild("Trowel")
+if trowel then
+	trowel:SetAttribute("Durability", math.huge)
+	print("🧤 Infinite Trowel durability enabled.")
+end

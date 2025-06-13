@@ -1,0 +1,5 @@
+local owlNPC = workspace:FindFirstChild("OwlQuestGiver")
+if owlNPC then
+	owlNPC.CompleteAllQuests:FireServer()
+	print("🦉 All Owl quests completed instantly.")
+end
